@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2048</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-neumorph">
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Classic Puzzle, Modern Finish</p>
+        <h1>2048</h1>
+      </div>
+      <div class="scoreboard" aria-label="Scoreboard">
+        <div class="score-card">
+          <span class="score-label">Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="score-card">
+          <span class="score-label">Best</span>
+          <strong id="best-score">0</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="controls" aria-label="Controls">
+      <button id="new-game" class="btn btn-primary" type="button">New Game</button>
+      <button id="undo" class="btn" type="button" disabled>Undo</button>
+      <button id="toggle-theme" class="btn" type="button" aria-pressed="false">Theme: Soft</button>
+      <button id="toggle-sound" class="btn" type="button" aria-pressed="false">Sound: Off</button>
+    </section>
+
+    <section class="board-wrap">
+      <div id="board" class="board" role="application" aria-label="2048 board">
+        <div id="grid" class="grid" aria-hidden="true"></div>
+        <div id="tile-layer" class="tile-layer" aria-live="polite"></div>
+        <div id="fx-layer" class="fx-layer" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <p id="status" class="status" aria-live="polite">Use arrow keys or swipe to play.</p>
+  </main>
+
+  <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="overlay-title">
+    <div class="overlay-card">
+      <h2 id="overlay-title">You win!</h2>
+      <p id="overlay-message">You reached 2048.</p>
+      <div class="overlay-actions">
+        <button id="overlay-continue" class="btn btn-primary" type="button">Continue</button>
+        <button id="overlay-restart" class="btn" type="button">Start New Game</button>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="script.js"></script>
+</body>
+</html>
