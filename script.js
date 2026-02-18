@@ -16,7 +16,7 @@
     won: false,
     gameOver: false,
     theme: "neumorph",
-    soundEnabled: false,
+    soundEnabled: true,
     previousState: null,
     overlay: null,
     isAnimating: false,
@@ -611,7 +611,7 @@
       return;
     }
     ensureAudioContext();
-    tone(280, 0.035, "triangle", 0.02);
+    tone(280, 0.08, "triangle", 0.15);
   }
 
   function playMergeSound() {
@@ -619,8 +619,8 @@
       return;
     }
     ensureAudioContext();
-    tone(320, 0.04, "triangle", 0.03);
-    setTimeout(() => tone(470, 0.05, "triangle", 0.025), 28);
+    tone(320, 0.1, "triangle", 0.2);
+    setTimeout(() => tone(470, 0.12, "triangle", 0.18), 50);
   }
 
   function playWinSound() {
@@ -629,7 +629,7 @@
     }
     ensureAudioContext();
     [523, 659, 784, 1047].forEach((frequency, index) => {
-      setTimeout(() => tone(frequency, 0.09, "sine", 0.04), index * 85);
+      setTimeout(() => tone(frequency, 0.15, "sine", 0.25), index * 120);
     });
   }
 
@@ -639,7 +639,7 @@
     }
     ensureAudioContext();
     [392, 330, 262, 196].forEach((frequency, index) => {
-      setTimeout(() => tone(frequency, 0.11, "sawtooth", 0.035), index * 95);
+      setTimeout(() => tone(frequency, 0.18, "sawtooth", 0.2), index * 130);
     });
   }
 
